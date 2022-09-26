@@ -1,0 +1,72 @@
+﻿@model IEnumerable<List.Models.student_List>
+
+@{
+    ViewBag.Title = "Student List";
+}
+
+<h2>Student Information</h2>
+<form method="post">
+    <table class="table">
+        <tr>
+            <th>
+                Student ID
+            </th>
+            <th>
+                Student Name
+            </th>
+            <th>
+                Student Roll
+            </th>
+            <th>
+                Student Blood Group
+            </th>
+            <th>
+                Student_Address
+            </th>
+            <th>
+                Admit Date
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Student_ID
+                </td>
+                <td>
+                    @item.Student_Name
+                </td>
+                <td>
+                    @item.Student_Roll
+                </td>
+                <td>
+                    @item.Student_Blood_Group
+                </td>
+                <td>
+                    @item.Student_Address
+                </td>
+                <td>
+                    @item.Admit_Date.ToString("dd/MM/yyyy")
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <input type="submit" value="ConvertToJSon"class="btn btn-primary" />
+            </div>
+        </div>
+        @*<div class="col-md-6">
+            <div class="row">
+                <input type="submit" value="Read" />
+                <a href="/Home/About_Read"class="btn btn-primary">Read</a>
+            </div>
+        </div>*@
+    </div>
+   
+</form>

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<List.Models.student_List>
+
+@{
+    ViewBag.Title = "StudentList_Read";
+}
+
+<h2>Student Information</h2>
+<form method="post">
+    <table class="table" id="StudentList3wqwe">
+        <thead>
+            <tr>
+                <th>
+                    Student ID
+                </th>
+                <th>
+                    Student Name
+                </th>
+                <th>
+                    Student Roll
+                </th>
+                <th>
+                    Student Blood Group
+                </th>
+                <th>
+                    Student_Address
+                </th>
+                <th>
+                    Admit Date
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Student_ID
+                    </td>
+                    <td>
+                        @item.Student_Name
+                    </td>
+                    <td>
+                        @item.Student_Roll
+                    </td>
+                    <td>
+                        @item.Student_Blood_Group
+                    </td>
+                    <td>
+                        @item.Student_Address
+                    </td>
+                    <td>
+                        @item.Admit_Date.ToString("dd/MM/yyyy")
+                    </td>
+                </tr>
+            }
+        </tbody>
+        
+
+       
+
+    </table>
+
+    <!--<div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <a href="/Home/About" class="btn btn-primary">convert json</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">-->
+    @*<input type="submit" value="read" />*@
+    <!--<a href="/home/about_read" class="btn btn-primary">Read</a>
+            </div>
+        </div>
+    </div>-->
+
+
+</form>
+@section Scripts{
+
+    <script type="text/javascript">
+        $(function () {
+            $("#StudentList3wqwe").dataTable();
+        });
+    </script>
+   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+    
+}
+
+
